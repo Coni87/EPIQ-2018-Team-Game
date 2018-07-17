@@ -11,7 +11,7 @@ Drawable bg
     end
 
     action CreateGame
-        bg:LoadFilledRectangle(500,500)
+        bg:LoadFilledRectangle(GetScreenWidth(),GetScreenHeight())
         bg:SetColor(0.2,0.4,0.6,1)
         Add(bg)
     end
