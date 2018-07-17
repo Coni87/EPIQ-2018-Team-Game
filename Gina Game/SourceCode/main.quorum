@@ -1,1 +1,30 @@
-//hello
+use Libraries.Game.Game
+use Libraries.Game.Graphics.Color
+use Libraries.Game.Graphics.Drawable
+
+class Main is Game
+Color color
+Drawable bg
+
+    action Main
+        StartGame()
+    end
+
+    action CreateGame
+        bg:LoadFilledRectangle(500,500)
+        bg:SetColor(0.2,0.4,0.6,1)
+        Add(bg)
+    end
+    
+    action Update(number seconds)
+    end
+end
+
+/*Trivia type game, with quorum codes to control the robot
+How would you turn the robot to the right using quorum?
+  robot:TurnRight
+  robot:rotatewheel
+
+How would you turn the robot to the right using LEGO?
+    block info
+*/
