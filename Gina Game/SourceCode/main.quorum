@@ -4,13 +4,18 @@ use Libraries.Game.Graphics.Drawable
 use Libraries.Interface.Layouts.Layout
 use Libraries.Game.DesktopConfiguration
 use Libraries.Sound.Speech
+use Libraries.Game.Graphics.Label
+use Libraries.Game.Graphics.Font
 
 class Main is Game
 Color color
 Drawable bg
 Layout backgroundLayout
+Layout titleLayout
 DesktopConfiguration config
 Speech speech
+Label lb
+Font ft
 
     action Main
         config = GetDesktopConfiguration()
@@ -20,12 +25,26 @@ Speech speech
 
     action CreateGame
         backgroundLayout:SetPercentageHeight(1)
-        backgroundLayout:SetPercentageWidth(1)        
+        backgroundLayout:SetPercentageWidth(1)
+        
         bg:LoadFilledRectangle(1,1)
         bg:SetColor(color:Black())
         bg:AddLayout(backgroundLayout)
         bg:Resize()
-        Add(bg)        
+        Add(bg)
+
+        titleLayout:SetPercentageOriginX(0.5)
+        titleLayout:SetPercentageX(0.5)
+        titleLayout:SetPercentageY(0.5)
+
+        lb:SetText("Quorum Robot Quiz Game")
+        lb:AddLayout(titleLayout)
+        lb:Resize()
+        lb:SetColor(color:White())
+        lb:SetSize(35)
+        Add (lb)
+
+
     end
     
     action Update(number seconds)
