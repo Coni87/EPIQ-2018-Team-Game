@@ -16,6 +16,7 @@ DesktopConfiguration config
 Speech speech
 Label lb
 Font ft
+number timer = 0
 
     action Main
         config = GetDesktopConfiguration()
@@ -44,10 +45,15 @@ Font ft
         lb:SetSize(35)
         Add (lb)
 
+        speech:Say("Welcome to the game!")
 
     end
     
     action Update(number seconds)
+        timer = timer + seconds
+        if timer > 5
+            lb:SetText("Question 1:") 
+        end
     end
 end
 
