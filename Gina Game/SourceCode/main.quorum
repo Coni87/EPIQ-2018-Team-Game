@@ -3,12 +3,14 @@ use Libraries.Game.Graphics.Color
 use Libraries.Game.Graphics.Drawable
 use Libraries.Interface.Layouts.Layout
 use Libraries.Game.DesktopConfiguration
+use Libraries.Sound.Speech
 
 class Main is Game
 Color color
 Drawable bg
 Layout backgroundLayout
 DesktopConfiguration config
+Speech speech
 
     action Main
         config = GetDesktopConfiguration()
