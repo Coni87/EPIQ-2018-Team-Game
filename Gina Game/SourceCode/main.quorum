@@ -13,11 +13,15 @@ Color color
 Drawable bg
 Layout backgroundLayout
 Layout titleLayout
-Layout  buttonOneLayout
-Layout  buttonTwoLayout
+Layout buttonOneLayout
+Layout buttonTwoLayout
+Layout buttonThreeLayout
+Layout buttonFourLayout
 DesktopConfiguration config
 Button buttonA
 Button buttonB
+Button buttonC
+Button buttonD
 Speech speech
 Label lb
 Font ft
@@ -81,6 +85,36 @@ number timer = 0
 
         ButtonTwo buttonTwo
         buttonB:SetBehavior(buttonTwo)
+
+        buttonThreeLayout:SetPercentageOriginX(0.5)
+        buttonThreeLayout:SetPercentageX(0.75)
+        buttonThreeLayout:SetPercentageY(0.25)
+        buttonThreeLayout:SetPercentageHeight(0.1)
+        buttonThreeLayout:SetPercentageWidth(0.1)
+
+        buttonC:Initialize(200, 100, "Option C")
+        Add(buttonC)
+//       buttonA:Focus()
+        buttonC:AddLayout(buttonThreeLayout)
+        buttonC:Resize()
+
+        ButtonThree buttonThree
+        buttonC:SetBehavior(buttonThree)
+
+        buttonFourLayout:SetPercentageOriginX(0.5)
+        buttonFourLayout:SetPercentageX(0.75)
+        buttonFourLayout:SetPercentageY(0.125)
+        buttonFourLayout:SetPercentageHeight(0.1)
+        buttonFourLayout:SetPercentageWidth(0.1)
+
+        buttonD:Initialize(200, 100, "Option D")
+        Add(buttonD)
+//        buttonB:Focus()
+        buttonD:AddLayout(buttonFourLayout)
+        buttonD:Resize()
+
+        ButtonFour buttonFour
+        buttonD:SetBehavior(buttonFour)
     end
     
     action Update(number seconds)
