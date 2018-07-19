@@ -6,13 +6,16 @@ use Libraries.Game.DesktopConfiguration
 use Libraries.Sound.Speech
 use Libraries.Game.Graphics.Label
 use Libraries.Game.Graphics.Font
+use Libraries.Interface.Controls.Button
 
 class Main is Game
 Color color
 Drawable bg
 Layout backgroundLayout
 Layout titleLayout
+Layout  buttonOneLayout
 DesktopConfiguration config
+Button buttonA
 Speech speech
 Label lb
 Font ft
@@ -47,6 +50,20 @@ number timer = 0
 
         speech:Say("Welcome to the game!")
 
+        buttonOneLayout:SetPercentageOriginX(0.5)
+        buttonOneLayout:SetPercentageX(0.25)
+        buttonOneLayout:SetPercentageY(0.25)
+        buttonOneLayout:SetPercentageHeight(0.1)
+        buttonOneLayout:SetPercentageWidth(0.1)
+
+        buttonA:Initialize(200, 100, "Option A")
+        Add(buttonA)
+        buttonA:Focus()
+        buttonA:AddLayout(buttonOneLayout)
+        buttonA:Resize()
+
+        ButtonOne buttonOne
+        buttonA:SetBehavior(buttonOne)
     end
     
     action Update(number seconds)
