@@ -1,0 +1,22 @@
+use Libraries.Interface.Behaviors.Behavior
+use Libraries.Interface.Events.BehaviorEvent
+use Libraries.Sound.Speech
+use Libraries.Interface.Item
+use Libraries.Game.Graphics.Drawable
+use Libraries.Game.GameStateManager
+use Libraries.Game.Game
+use Libraries.Interface.Item2D
+
+
+class ButtonTwo is Behavior
+    Speech speech
+
+    action Run(BehaviorEvent event)
+        speech:Say("Option B", false)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
+        
+//        GameStateManager manager
+//        Game game = manager:GetGame()
+//        game:Remove(cast(Item2D, event:GetItem()))
+    end
+
+end

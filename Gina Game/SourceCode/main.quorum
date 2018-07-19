@@ -14,8 +14,10 @@ Drawable bg
 Layout backgroundLayout
 Layout titleLayout
 Layout  buttonOneLayout
+Layout  buttonTwoLayout
 DesktopConfiguration config
 Button buttonA
+Button buttonB
 Speech speech
 Label lb
 Font ft
@@ -64,6 +66,21 @@ number timer = 0
 
         ButtonOne buttonOne
         buttonA:SetBehavior(buttonOne)
+
+        buttonTwoLayout:SetPercentageOriginX(0.5)
+        buttonTwoLayout:SetPercentageX(0.25)
+        buttonTwoLayout:SetPercentageY(0.125)
+        buttonTwoLayout:SetPercentageHeight(0.1)
+        buttonTwoLayout:SetPercentageWidth(0.1)
+
+        buttonB:Initialize(200, 100, "Option B")
+        Add(buttonB)
+//        buttonB:Focus()
+        buttonB:AddLayout(buttonTwoLayout)
+        buttonB:Resize()
+
+        ButtonTwo buttonTwo
+        buttonB:SetBehavior(buttonTwo)
     end
     
     action Update(number seconds)
