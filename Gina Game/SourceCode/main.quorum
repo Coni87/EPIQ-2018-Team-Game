@@ -64,7 +64,7 @@ number timer = 0
 
         buttonA:Initialize(200, 100, "Option A")
         Add(buttonA)
-        buttonA:Focus()
+        buttonA:SetFocusable(true)
         buttonA:AddLayout(buttonOneLayout)
         buttonA:Resize()
 
@@ -79,7 +79,7 @@ number timer = 0
 
         buttonB:Initialize(200, 100, "Option B")
         Add(buttonB)
-//        buttonB:Focus()
+        buttonB:SetFocusable(true)
         buttonB:AddLayout(buttonTwoLayout)
         buttonB:Resize()
 
@@ -94,7 +94,7 @@ number timer = 0
 
         buttonC:Initialize(200, 100, "Option C")
         Add(buttonC)
-//       buttonA:Focus()
+        buttonC:SetFocusable(true)
         buttonC:AddLayout(buttonThreeLayout)
         buttonC:Resize()
 
@@ -109,12 +109,27 @@ number timer = 0
 
         buttonD:Initialize(200, 100, "Option D")
         Add(buttonD)
-//        buttonB:Focus()
+        buttonD:SetFocusable(true)
         buttonD:AddLayout(buttonFourLayout)
         buttonD:Resize()
 
         ButtonFour buttonFour
         buttonD:SetBehavior(buttonFour)
+
+
+        buttonA:SetNextFocus(buttonB)
+        buttonA:SetPreviousFocus(buttonD)
+        
+        buttonB:SetNextFocus(buttonC)
+        buttonB:SetPreviousFocus(buttonA)
+        
+        buttonC:SetNextFocus(buttonD)
+        buttonC:SetPreviousFocus(buttonB)
+
+        buttonD:SetNextFocus(buttonA)
+        buttonD:SetPreviousFocus(buttonC)
+        
+        SetFocus(buttonA)
     end
     
     action Update(number seconds)
