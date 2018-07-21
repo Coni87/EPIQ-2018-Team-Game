@@ -7,8 +7,10 @@ use Libraries.Sound.Speech
 use Libraries.Game.Graphics.Label
 use Libraries.Game.Graphics.Font
 use Libraries.Interface.Controls.Button
+use Libraries.Game.Layer2D
 
 class Main is Game
+Layer2D layer1 = undefined
 Color color
 Drawable bg
 Layout backgroundLayout
@@ -35,6 +37,10 @@ boolean question1 = false
     end
 
     action CreateGame
+        Layer2D bgLayer
+        layer1 = bgLayer
+        AddLayer(0, bgLayer)
+
         backgroundLayout:SetPercentageHeight(1)
         backgroundLayout:SetPercentageWidth(1)
         
@@ -42,7 +48,7 @@ boolean question1 = false
         bg:SetColor(color:Black())
         bg:AddLayout(backgroundLayout)
         bg:Resize()
-        Add(bg)
+        bgLayer:Add(bg)
 
         titleLayout:SetPercentageOriginX(0.5)
         titleLayout:SetPercentageX(0.5)

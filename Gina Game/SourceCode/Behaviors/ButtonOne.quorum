@@ -14,9 +14,10 @@ class ButtonOne is Behavior
     Audio noise
 
     action Run(BehaviorEvent event)
-        speech:Say("Option A", false)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
+        speech:Say("Option A", true)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
+        
         noise:Load("Hop.wav")
-        noise:Play()
+        noise:PlayUntilDone()
         
 //        GameStateManager manager
 //        Game game = manager:GetGame()
