@@ -6,6 +6,5 @@ class ButtonFocus is Button
     action GainedFocus (FocusEvent event)
         text name = GetName()
         say name
-        output name
     end
 end

@@ -1,6 +1,7 @@
 use Libraries.Interface.Behaviors.Behavior
 use Libraries.Interface.Events.BehaviorEvent
 use Libraries.Sound.Speech
+use Libraries.Sound.Audio
 use Libraries.Interface.Item
 use Libraries.Game.Graphics.Drawable
 use Libraries.Game.GameStateManager
@@ -10,9 +11,12 @@ use Libraries.Interface.Item2D
 
 class ButtonOne is Behavior
     Speech speech
+    Audio noise
 
     action Run(BehaviorEvent event)
         speech:Say("Option A", false)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
+        noise:Load("Hop.wav")
+        noise:Play()
         
 //        GameStateManager manager
 //        Game game = manager:GetGame()

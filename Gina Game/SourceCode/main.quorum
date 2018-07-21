@@ -137,9 +137,15 @@ boolean question1 = false
     action Update(number seconds)
         timer = timer + seconds
         if timer > 5 and question1 = false
-            lb:SetText("Question 1:")
-            speech:Say("Question 1")
+            text q1 = "What language do we use?"
+            lb:SetText(q1)
+            speech:Say(q1)
             question1 = true
+            
+            buttonA:SetName("QUORUM")
+            buttonB:SetName("JAVA")
+            buttonC:SetName("C++")
+            buttonD:SetName("PYTHON")
         end
     end
 end
