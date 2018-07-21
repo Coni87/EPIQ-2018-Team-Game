@@ -1,0 +1,11 @@
+use Libraries.Interface.Controls.Button
+use Libraries.Sound.Speech
+use Libraries.Interface.Events.FocusEvent
+
+class ButtonFocus is Button
+    action GainedFocus (FocusEvent event)
+        text name = GetName()
+        say name
+        output name
+    end
+end

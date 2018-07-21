@@ -18,14 +18,15 @@ Layout buttonTwoLayout
 Layout buttonThreeLayout
 Layout buttonFourLayout
 DesktopConfiguration config
-Button buttonA
-Button buttonB
-Button buttonC
-Button buttonD
+ButtonFocus buttonA
+ButtonFocus buttonB
+ButtonFocus buttonC
+ButtonFocus buttonD
 Speech speech
 Label lb
 Font ft
 number timer = 0
+boolean question1 = false
 
     action Main
         config = GetDesktopConfiguration()
@@ -52,9 +53,10 @@ number timer = 0
         lb:Resize()
         lb:SetColor(color:White())
         lb:SetSize(35)
+        lb:SetFocusable(true)
         Add (lb)
 
-        speech:Say("Welcome to the game!")
+        speech:Say("Welcome to the game!",false)
 
         buttonOneLayout:SetPercentageOriginX(0.5)
         buttonOneLayout:SetPercentageX(0.25)
@@ -116,6 +118,7 @@ number timer = 0
         ButtonFour buttonFour
         buttonD:SetBehavior(buttonFour)
 
+        lb:SetNextFocus(buttonA)
 
         buttonA:SetNextFocus(buttonB)
         buttonA:SetPreviousFocus(buttonD)
@@ -128,14 +131,15 @@ number timer = 0
 
         buttonD:SetNextFocus(buttonA)
         buttonD:SetPreviousFocus(buttonC)
-        
-        SetFocus(buttonA)
+        SetFocus(lb)
     end
     
     action Update(number seconds)
         timer = timer + seconds
-        if timer > 5
-            lb:SetText("Question 1:") 
+        if timer > 5 and question1 = false
+            lb:SetText("Question 1:")
+            speech:Say("Question 1")
+            question1 = true
         end
     end
 end
