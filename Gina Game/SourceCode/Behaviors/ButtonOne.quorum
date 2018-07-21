@@ -12,16 +12,22 @@ use Libraries.Interface.Item2D
 class ButtonOne is Behavior
     Speech speech
     Audio noise
+    text optionA = ""
 
     action Run(BehaviorEvent event)
-        speech:Say("Option A", true)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
-        
-        noise:Load("Hop.wav")
+        speech:Say(optionA)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
+     
         noise:PlayUntilDone()
         
 //        GameStateManager manager
 //        Game game = manager:GetGame()
 //        game:Remove(cast(Item2D, event:GetItem()))
     end
-
+    action SetNoise (Audio item)
+        noise = item
+    end
+    
+    action SetOption (text option)
+        option = optionA
+    end
 end

@@ -8,6 +8,7 @@ use Libraries.Game.Graphics.Label
 use Libraries.Game.Graphics.Font
 use Libraries.Interface.Controls.Button
 use Libraries.Game.Layer2D
+use Libraries.Sound.Audio
 
 class Main is Game
 Layer2D layer1 = undefined
@@ -27,6 +28,7 @@ ButtonFocus buttonD
 Speech speech
 Label lb
 Font ft
+Audio noise1
 number timer = 0
 boolean question1 = false
 
@@ -138,6 +140,10 @@ boolean question1 = false
         buttonD:SetNextFocus(buttonA)
         buttonD:SetPreviousFocus(buttonC)
         SetFocus(lb)
+
+        buttonOne:SetNoise(noise1)
+        noise1:Load("Hop.wav")
+        buttonOne:SetOption("Quorum")
     end
     
     action Update(number seconds)
