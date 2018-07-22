@@ -16,6 +16,7 @@ class ButtonOne is Behavior
     text optionA = ""
     Drawable bunny
     Color color
+    boolean buttonIsGone = false
 
 
     action Run(BehaviorEvent event)
@@ -26,6 +27,7 @@ class ButtonOne is Behavior
         GameStateManager manager
         Game game = manager:GetGame()
         game:Remove(cast(Item2D, event:GetItem()))
+        SetIsGone(true)
     end
     action SetNoise (Audio item)
         noise = item
@@ -34,5 +36,12 @@ class ButtonOne is Behavior
     action SetOption (text option)
         option = optionA
     end
-   
+
+    action IsGone () returns boolean
+        return buttonIsGone
+    end
+    
+    action SetIsGone (boolean value)
+        buttonIsGone = value
+    end
 end

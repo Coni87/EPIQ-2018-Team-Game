@@ -14,6 +14,7 @@ class ButtonThree is Behavior
     Audio noise
     text optionA = ""
     Drawable bunny
+    buttonIsGone = false
 
     action Run(BehaviorEvent event)
         speech:Say(optionA)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
@@ -21,9 +22,10 @@ class ButtonThree is Behavior
         
         noise:PlayUntilDone()
 
-//        GameStateManager manager
-//        Game game = manager:GetGame()
-//        game:Remove(cast(Item2D, event:GetItem()))
+        GameStateManager manager
+        Game game = manager:GetGame()
+        game:Remove(cast(Item2D, event:GetItem()))
+        SetIsGone(true)
     end
     action SetNoise (Audio item)
         noise = item
@@ -31,5 +33,13 @@ class ButtonThree is Behavior
     
     action SetOption (text option)
         option = optionA
+    end
+
+    action IsGone () returns boolean
+        return buttonIsGone
+    end
+    
+    action SetIsGone (boolean value)
+        buttonIsGone = value
     end
 end

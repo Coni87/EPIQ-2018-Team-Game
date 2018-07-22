@@ -31,8 +31,15 @@ Font ft
 Audio noise1
 Audio noise2
 Drawable bunny
+Drawable bunny2
+Drawable bunny3
+Drawable bunny4
 number timer = 0
 boolean question1 = false
+ButtonOne buttonOne
+ButtonTwo buttonTwo
+ButtonThree buttonThree
+ButtonFour buttonFour
 
     action Main
         config = GetDesktopConfiguration()
@@ -80,7 +87,7 @@ boolean question1 = false
         buttonA:AddLayout(buttonOneLayout)
         buttonA:Resize()
 
-        ButtonOne buttonOne
+
         buttonA:SetBehavior(buttonOne)
 
         buttonTwoLayout:SetPercentageOriginX(0.5)
@@ -95,7 +102,7 @@ boolean question1 = false
         buttonB:AddLayout(buttonTwoLayout)
         buttonB:Resize()
 
-        ButtonTwo buttonTwo
+
         buttonB:SetBehavior(buttonTwo)
 
         buttonThreeLayout:SetPercentageOriginX(0.5)
@@ -110,7 +117,7 @@ boolean question1 = false
         buttonC:AddLayout(buttonThreeLayout)
         buttonC:Resize()
 
-        ButtonThree buttonThree
+
         buttonC:SetBehavior(buttonThree)
 
         buttonFourLayout:SetPercentageOriginX(0.5)
@@ -125,7 +132,7 @@ boolean question1 = false
         buttonD:AddLayout(buttonFourLayout)
         buttonD:Resize()
 
-        ButtonFour buttonFour
+
         buttonD:SetBehavior(buttonFour)
 
         lb:SetNextFocus(buttonA)
@@ -170,6 +177,26 @@ boolean question1 = false
             buttonB:SetName("JAVA")
             buttonC:SetName("C++")
             buttonD:SetName("PYTHON")
+        end
+        if buttonOne:IsGone() 
+            bunny:Load("quorum bunny.png")
+            bunny:AddLayout(buttonOneLayout)
+            Add(bunny)
+        end
+        if buttonTwo:IsGone() 
+            bunny2:Load("sad bunny.jpg")
+            bunny2:AddLayout(buttonTwoLayout)
+            Add(bunny2)
+        end
+        if buttonThree:IsGone() 
+            bunny3:Load("sad bunny.jpg")
+            bunny3:AddLayout(buttonThreeLayout)
+            Add(bunny3)
+        end
+        if buttonFour:IsGone() 
+            bunny4:Load("sad bunny.jpg")
+            bunny4:AddLayout(buttonFourLayout)
+            Add(bunny4)
         end
     end
 end
