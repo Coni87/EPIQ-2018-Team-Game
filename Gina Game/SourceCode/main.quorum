@@ -69,7 +69,7 @@ ButtonFour buttonFour
         lb:AddLayout(titleLayout)
         lb:Resize()
         lb:SetColor(color:White())
-        lb:SetSize(35)
+        lb:SetSize(72)
         lb:SetFocusable(true)
         Add (lb)
 
@@ -131,7 +131,6 @@ ButtonFour buttonFour
         buttonD:SetFocusable(true)
         buttonD:AddLayout(buttonFourLayout)
         buttonD:Resize()
-
 
         buttonD:SetBehavior(buttonFour)
 
