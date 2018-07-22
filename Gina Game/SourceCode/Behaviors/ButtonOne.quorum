@@ -4,6 +4,7 @@ use Libraries.Sound.Speech
 use Libraries.Sound.Audio
 use Libraries.Interface.Item
 use Libraries.Game.Graphics.Drawable
+use Libraries.Game.Graphics.Color
 use Libraries.Game.GameStateManager
 use Libraries.Game.Game
 use Libraries.Interface.Item2D
@@ -14,16 +15,17 @@ class ButtonOne is Behavior
     Audio noise
     text optionA = ""
     Drawable bunny
+    Color color
+
 
     action Run(BehaviorEvent event)
         speech:Say(optionA)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
-        bunny:Load("quorum bunny.png")
         
         noise:PlayUntilDone()
 
-//        GameStateManager manager
-//        Game game = manager:GetGame()
-//        game:Remove(cast(Item2D, event:GetItem()))
+        GameStateManager manager
+        Game game = manager:GetGame()
+        game:Remove(cast(Item2D, event:GetItem()))
     end
     action SetNoise (Audio item)
         noise = item
@@ -32,4 +34,5 @@ class ButtonOne is Behavior
     action SetOption (text option)
         option = optionA
     end
+   
 end

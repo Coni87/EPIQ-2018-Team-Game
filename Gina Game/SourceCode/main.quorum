@@ -30,6 +30,7 @@ Label lb
 Font ft
 Audio noise1
 Audio noise2
+Drawable bunny
 number timer = 0
 boolean question1 = false
 
@@ -52,7 +53,7 @@ boolean question1 = false
         bg:AddLayout(backgroundLayout)
         bg:Resize()
         bgLayer:Add(bg)
-
+        
         titleLayout:SetPercentageOriginX(0.5)
         titleLayout:SetPercentageX(0.5)
         titleLayout:SetPercentageY(0.5)
@@ -159,7 +160,7 @@ boolean question1 = false
     
     action Update(number seconds)
         timer = timer + seconds
-        if timer > 5 and question1 = false
+        if timer > 3 and question1 = false
             text q1 = "What language do we use?"
             lb:SetText(q1)
             speech:Say(q1)
