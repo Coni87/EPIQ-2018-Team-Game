@@ -29,6 +29,7 @@ Speech speech
 Label lb
 Font ft
 Audio noise1
+Audio noise2
 number timer = 0
 boolean question1 = false
 
@@ -144,6 +145,16 @@ boolean question1 = false
         buttonOne:SetNoise(noise1)
         noise1:Load("Hop.wav")
         buttonOne:SetOption("Quorum")
+
+        buttonTwo:SetNoise(noise2)
+        noise2:Load("Banana Slip.wav")
+        buttonTwo:SetOption ("Java")
+
+        buttonThree:SetNoise(noise2)
+        buttonThree:SetOption ("C++")
+        
+        buttonFour:SetNoise(noise2)
+        buttonFour:SetOption ("Python")
     end
     
     action Update(number seconds)

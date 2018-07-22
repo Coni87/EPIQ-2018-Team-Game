@@ -13,12 +13,14 @@ class ButtonOne is Behavior
     Speech speech
     Audio noise
     text optionA = ""
+    Drawable bunny
 
     action Run(BehaviorEvent event)
         speech:Say(optionA)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
-     
-        noise:PlayUntilDone()
+        bunny:Load("quorum bunny.png")
         
+        noise:PlayUntilDone()
+
 //        GameStateManager manager
 //        Game game = manager:GetGame()
 //        game:Remove(cast(Item2D, event:GetItem()))

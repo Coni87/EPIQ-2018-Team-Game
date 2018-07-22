@@ -6,17 +6,30 @@ use Libraries.Game.Graphics.Drawable
 use Libraries.Game.GameStateManager
 use Libraries.Game.Game
 use Libraries.Interface.Item2D
+use Libraries.Sound.Audio
 
 
 class ButtonTwo is Behavior
-    Speech speech
+   Speech speech
+    Audio noise
+    text optionA = ""
+    Drawable bunny
 
     action Run(BehaviorEvent event)
-        speech:Say("Option B", false)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
+        speech:Say(optionA)//false makes the game continue to run while the sound runs, true would stop the game while sound goes
+        bunny:Load("quorum bunny.png")
         
+        noise:PlayUntilDone()
+
 //        GameStateManager manager
 //        Game game = manager:GetGame()
 //        game:Remove(cast(Item2D, event:GetItem()))
     end
-
+    action SetNoise (Audio item)
+        noise = item
+    end
+    
+    action SetOption (text option)
+        option = optionA
+    end
 end
